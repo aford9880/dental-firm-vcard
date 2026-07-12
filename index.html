@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DentalCare — стоматологическая клиника в Москве | Лечение зубов, имплантация, ортодонтия</title>
+  <meta name="description" content="DentalCare — профессиональная стоматология с опытом 15+ лет. Лечение зубов, имплантация Nobel Biocare, брекеты, виниры. Запись онлайн.">
+  <meta name="keywords" content="стоматология Москва, лечение зубов, имплантация, брекеты, виниры, протезирование">
+
+  <meta property="og:title" content="DentalCare — стоматологическая клиника в Москве">
+  <meta property="og:description" content="Профессиональная стоматология с опытом 15+ лет. Запись онлайн.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "DentalCare",
+    "description": "Современная стоматологическая клиника полного цикла.",
+    "url": "https://dentalcare.ru",
+    "telephone": "+7 (495) 123-45-67",
+    "email": "info@dentalcare.ru",
+    "address": { "@type": "PostalAddress", "streetAddress": "ул. Новый Арбат, д. 15", "addressLocality": "Москва", "postalCode": "121099", "addressCountry": "RU" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "10:00", "closes": "18:00" }
+    ],
+    "priceRange": "от 1500₽",
+    "image": "assets/images/hero-bg.jpg"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__topline">
+      <div class="container">
+        <span>Ежедневно с 9:00 до 21:00</span>
+        <div class="header__topline-right">
+          <a href="tel:+74951234567" class="header__topline-phone">+7 (495) 123-45-67</a>
+        </div>
+      </div>
+    </div>
+    <div class="header__main">
+      <div class="container">
+        <div class="header__inner">
+          <a href="#" class="header__logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M12 2C7.03 2 3 6.03 3 11c0 3.5 2.08 6.5 5.04 7.95.23.1.39.23.5.43.11.2.14.44.1.68-.09.55-.18 1.1-.18 1.67 0 .97.78 1.75 1.75 1.75h4.5c.97 0 1.75-.78 1.75-1.75 0-.57-.09-1.12-.18-1.67-.04-.24-.01-.48.1-.68.11-.2.27-.33.5-.43C18.92 17.5 21 14.5 21 11c0-4.97-4.03-9-9-9z"/></svg>
+            <span class="header__logo-text">Dental<span>Care</span></span>
+          </a>
+          <nav class="header__nav" id="nav">
+            <ul class="header__nav-list">
+              <li><a href="#services" class="header__nav-link">Услуги</a></li>
+              <li><a href="#doctors" class="header__nav-link">Врачи</a></li>
+              <li><a href="#gallery" class="header__nav-link">Галерея</a></li>
+              <li><a href="#prices" class="header__nav-link">Цены</a></li>
+              <li><a href="#reviews" class="header__nav-link">Отзывы</a></li>
+              <li><a href="#contacts" class="header__nav-link">Контакты</a></li>
+            </ul>
+          </nav>
+          <a href="#form" class="btn header__cta">Записаться</a>
+          <button class="header__burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="assets/images/hero-bg.jpg" alt="DentalCare стоматологическая клиника">
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="container">
+      <div class="hero__content">
+        <span class="hero__badge">Семейная стоматология в Москве</span>
+        <h1 class="hero__title">Улыбка,<br>которой доверяют</h1>
+        <p class="hero__subtitle">Лечение, имплантация и эстетическая стоматология. <br class="hide-mobile">Безболезненно. Надёжно. С гарантией 10 лет.</p>
+        <div class="hero__actions">
+          <a href="#form" class="btn btn--primary hero__btn">Записаться на приём</a>
+          <a href="#services" class="btn btn--outline hero__btn-outline">Наши услуги</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat"><span class="hero__stat-num" data-count="15">0</span><span class="hero__stat-label">лет опыта</span></div>
+          <div class="hero__stat"><span class="hero__stat-num" data-count="25">0</span><span class="hero__stat-label">тыс. пациентов</span></div>
+          <div class="hero__stat"><span class="hero__stat-num" data-count="98">0</span><span class="hero__stat-label">% довольных</span></div>
+          <div class="hero__stat"><span class="hero__stat-num" data-count="12">0</span><span class="hero__stat-label">врачей</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PARTNERS ========== -->
+  <section class="partners">
+    <div class="container">
+      <div class="partners__inner">
+        <span class="partners__label">Работаем с ведущими производителями</span>
+        <div class="partners__logos">
+          <div class="partners__logo"><span>NOBEL</span><small>Biocare</small></div>
+          <div class="partners__logo"><span>straumann</span></div>
+          <div class="partners__logo"><span>OSSTEM</span></div>
+          <div class="partners__logo"><span>DENTIUM</span></div>
+          <div class="partners__logo"><span>3M</span></div>
+          <div class="partners__logo"><span>Dentsply</span><small>Sirona</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Наши направления</span>
+        <h2 class="section__title">Услуги клиники</h2>
+        <p class="section__subtitle">Полный спектр стоматологических услуг для взрослых и детей</p>
+      </div>
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__img"><img src="assets/images/service-therapy.jpg" alt="Терапевтическая стоматология" loading="lazy"></div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Терапевтическая стоматология</h3>
+            <p class="service-card__desc">Лечение кариеса, пульпита, периодонтита. Реставрация зубов любой сложности. Работа под микроскопом.</p>
+            <div class="service-card__features">
+              <span>Кариес</span><span>Пульпит</span><span>Реставрация</span>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__price">от 3 500 ₽</span>
+              <a href="#form" class="service-card__btn">Записаться →</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__img"><img src="assets/images/service-surgery.jpg" alt="Хирургия" loading="lazy"></div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Хирургическая стоматология</h3>
+            <p class="service-card__desc">Удаление зубов любой сложности, резекция корня, пластика уздечки, кистэктомия. Безболезненно.</p>
+            <div class="service-card__features">
+              <span>Удаление</span><span>Кистэктомия</span><span>Пластика</span>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__price">от 2 500 ₽</span>
+              <a href="#form" class="service-card__btn">Записаться →</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__img"><img src="assets/images/service-orthopedics.jpg" alt="Ортопедия" loading="lazy"></div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Ортопедическая стоматология</h3>
+            <p class="service-card__desc">Коронки, виниры E-MAX, мосты, съёмное и несъёмное протезирование. Восстановление эстетики улыбки.</p>
+            <div class="service-card__features">
+              <span>Коронки</span><span>Виниры</span><span>Протезы</span>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__price">от 7 000 ₽</span>
+              <a href="#form" class="service-card__btn">Записаться →</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__img"><img src="assets/images/service-implantation.jpg" alt="Имплантация" loading="lazy"></div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Имплантация зубов</h3>
+            <p class="service-card__desc">Импланты Nobel Biocare, Straumann, OSSTEM. All-on-4, All-on-6, костная пластика. Гарантия 10 лет.</p>
+            <div class="service-card__features">
+              <span>Nobel</span><span>Straumann</span><span>All-on-4</span>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__price">от 35 000 ₽</span>
+              <a href="#form" class="service-card__btn">Записаться →</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__img"><img src="assets/images/service-orthodontics.jpg" alt="Ортодонтия" loading="lazy"></div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Ортодонтия</h3>
+            <p class="service-card__desc">Брекеты, элайнеры, исправление прикуса в любом возрасте. Индивидуальный план лечения.</p>
+            <div class="service-card__features">
+              <span>Брекеты</span><span>Элайнеры</span><span>Прикус</span>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__price">от 25 000 ₽</span>
+              <a href="#form" class="service-card__btn">Записаться →</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__img"><img src="assets/images/service-hygiene.jpg" alt="Гигиена" loading="lazy"></div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Гигиена и отбеливание</h3>
+            <p class="service-card__desc">Профессиональная гигиена Air Flow, ультразвуковая чистка, отбеливание Zoom 4. Комплексная забота.</p>
+            <div class="service-card__features">
+              <span>Air Flow</span><span>Zoom</span><span>Чистка</span>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__price">от 5 000 ₽</span>
+              <a href="#form" class="service-card__btn">Записаться →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about section">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image">
+          <img src="assets/images/about-clinic.jpg" alt="О клинике DentalCare" loading="lazy">
+          <div class="about__experience">
+            <span class="about__exp-num">15+</span>
+            <span class="about__exp-label">лет безупречной работы</span>
+          </div>
+        </div>
+        <div class="about__content">
+          <span class="section__label">О клинике</span>
+          <h2 class="section__title section__title--left">Стоматология, <br>которой доверяют</h2>
+          <p class="about__text">DentalCare — это современная стоматологическая клиника полного цикла. Мы сочетаем передовые технологии, многолетний опыт врачей и индивидуальный подход. Специализируемся на сложных клинических случаях.</p>
+          <p class="about__text">Наши врачи регулярно проходят обучение в Европе, используют сертифицированные материалы и работают на оборудовании экспертного класса.</p>
+          <div class="about__features">
+            <div class="about__feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Безболезненное лечение</span></div>
+            <div class="about__feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Гарантия 10 лет на работы</span></div>
+            <div class="about__feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span>Оборудование экспертного класса</span></div>
+            <div class="about__feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Работаем без выходных</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DOCTORS ========== -->
+  <section class="doctors section" id="doctors">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Команда</span>
+        <h2 class="section__title">Наши врачи</h2>
+        <p class="section__subtitle">Опытные специалисты с многолетней практикой и любовью к своему делу</p>
+      </div>
+      <div class="doctors__grid">
+        <div class="doctor-card">
+          <div class="doctor-card__img"><img src="assets/images/doctor-1.jpg" alt="Иванов Алексей Сергеевич" loading="lazy"></div>
+          <div class="doctor-card__body">
+            <h3 class="doctor-card__name">Иванов Алексей Сергеевич</h3>
+            <span class="doctor-card__spec">Главный врач, стоматолог-терапевт</span>
+            <span class="doctor-card__exp">Стаж 15 лет • Кандидат наук</span>
+            <p class="doctor-card__desc">Эстетическая реставрация, лечение под микроскопом. Член ISD (International Society of Dentistry).</p>
+            <a href="#form" class="doctor-card__btn">Записаться к врачу</a>
+          </div>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-card__img"><img src="assets/images/doctor-2.jpg" alt="Петрова Елена Михайловна" loading="lazy"></div>
+          <div class="doctor-card__body">
+            <h3 class="doctor-card__name">Петрова Елена Михайловна</h3>
+            <span class="doctor-card__spec">Стоматолог-ортодонт</span>
+            <span class="doctor-card__exp">Стаж 12 лет • Сертификат WFO</span>
+            <p class="doctor-card__desc">Эксперт по брекет-системам и элайнерам. Прошла обучение в Германии и Швейцарии. 500+ успешных кейсов.</p>
+            <a href="#form" class="doctor-card__btn">Записаться к врачу</a>
+          </div>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-card__img"><img src="assets/images/doctor-3.jpg" alt="Сидоров Дмитрий Владимирович" loading="lazy"></div>
+          <div class="doctor-card__body">
+            <h3 class="doctor-card__name">Сидоров Дмитрий Владимирович</h3>
+            <span class="doctor-card__spec">Хирург-имплантолог</span>
+            <span class="doctor-card__exp">Стаж 18 лет • 2000+ операций</span>
+            <p class="doctor-card__desc">Сертифицированный специалист Nobel Biocare и Straumann. Проводит имплантацию любой сложности.</p>
+            <a href="#form" class="doctor-card__btn">Записаться к врачу</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Фотогалерея</span>
+        <h2 class="section__title">Как выглядит наша клиника</h2>
+        <p class="section__subtitle">Современные кабинеты, комфортная атмосфера и передовое оборудование</p>
+      </div>
+      <div class="gallery__grid">
+        <div class="gallery__item gallery__item--tall"><img src="assets/images/gallery-reception.jpg" alt="Ресепшен" loading="lazy"><div class="gallery__caption">Зона ресепшен</div></div>
+        <div class="gallery__item"><img src="assets/images/gallery-cabinet.jpg" alt="Лечебный кабинет" loading="lazy"><div class="gallery__caption">Лечебный кабинет</div></div>
+        <div class="gallery__item"><img src="assets/images/gallery-operation.jpg" alt="Операционная" loading="lazy"><div class="gallery__caption">Операционный блок</div></div>
+        <div class="gallery__item"><img src="assets/images/gallery-equipment.jpg" alt="Оборудование" loading="lazy"><div class="gallery__caption">3D-томограф Planmeca</div></div>
+        <div class="gallery__item"><img src="assets/images/gallery-sterilization.jpg" alt="Стерилизация" loading="lazy"><div class="gallery__caption">Центральная стерилизационная</div></div>
+        <div class="gallery__item"><img src="assets/images/gallery-children.jpg" alt="Детский кабинет" loading="lazy"><div class="gallery__caption">Детский кабинет</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICES ========== -->
+  <section class="prices section" id="prices">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Стоимость</span>
+        <h2 class="section__title">Цены на услуги</h2>
+        <p class="section__subtitle">Прозрачное ценообразование без скрытых платежей</p>
+      </div>
+      <div class="prices__table-wrap">
+        <table class="prices__table">
+          <thead><tr><th>Услуга</th><th class="prices__th-price">Цена</th></tr></thead>
+          <tbody>
+            <tr><td>Приём врача-стоматолога (консультация, осмотр)</td><td class="prices__td-price">1 500 ₽</td></tr>
+            <tr><td>Лечение кариеса (одна полость)</td><td class="prices__td-price">4 500 ₽</td></tr>
+            <tr><td>Лечение пульпита (одноканальный зуб)</td><td class="prices__td-price">7 500 ₽</td></tr>
+            <tr><td>Лечение пульпита (двухканальный зуб)</td><td class="prices__td-price">9 500 ₽</td></tr>
+            <tr><td>Лечение пульпита (трёхканальный зуб)</td><td class="prices__td-price">12 500 ₽</td></tr>
+            <tr><td>Профессиональная гигиена Air Flow + ультразвук</td><td class="prices__td-price">5 000 ₽</td></tr>
+            <tr><td>Отбеливание зубов Zoom 4</td><td class="prices__td-price">18 000 ₽</td></tr>
+            <tr><td>Удаление зуба (простое)</td><td class="prices__td-price">2 500 ₽</td></tr>
+            <tr><td>Удаление зуба (сложное, включая зуб мудрости)</td><td class="prices__td-price">5 000 ₽</td></tr>
+            <tr><td>Имплантация OSSTEM (под ключ)</td><td class="prices__td-price">35 000 ₽</td></tr>
+            <tr><td>Имплантация Nobel Biocare (под ключ)</td><td class="prices__td-price">55 000 ₽</td></tr>
+            <tr><td>Металлокерамическая коронка</td><td class="prices__td-price">12 000 ₽</td></tr>
+            <tr><td>Коронка из диоксида циркония</td><td class="prices__td-price">22 000 ₽</td></tr>
+            <tr><td>Винир E-MAX</td><td class="prices__td-price">18 000 ₽</td></tr>
+            <tr><td>Брекет-система (металлическая)</td><td class="prices__td-price">35 000 ₽</td></tr>
+            <tr><td>Брекет-система (керамическая)</td><td class="prices__td-price">55 000 ₽</td></tr>
+            <tr><td>Элайнеры (1 челюсть)</td><td class="prices__td-price">80 000 ₽</td></tr>
+            <tr><td>Съёмный протез (частичный/полный)</td><td class="prices__td-price">от 15 000 ₽</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="prices__note">* Точная стоимость определяется после консультации с врачом.</p>
+    </div>
+  </section>
+
+  <!-- ========== LICENSES ========== -->
+  <section class="licenses section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Документы</span>
+        <h2 class="section__title">Лицензии и сертификаты</h2>
+        <p class="section__subtitle">Мы работаем официально. Качество подтверждено документально.</p>
+      </div>
+      <div class="licenses__grid">
+        <div class="license-card"><img src="assets/images/license-1.jpg" alt="Лицензия на медицинскую деятельность" loading="lazy"></div>
+        <div class="license-card"><img src="assets/images/license-2.jpg" alt="Сертификат ISO" loading="lazy"></div>
+        <div class="license-card"><img src="assets/images/license-3.jpg" alt="Диплом" loading="lazy"></div>
+        <div class="license-card"><img src="assets/images/license-4.jpg" alt="Сертификат специалиста" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEWS ========== -->
+  <section class="reviews section" id="reviews">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Отзывы</span>
+        <h2 class="section__title">Пациенты говорят</h2>
+        <p class="section__subtitle">Благодарность наших пациентов — лучшая награда для нас</p>
+      </div>
+      <div class="reviews__slider" id="reviewsSlider">
+        <div class="slider__track" id="sliderTrack">
+          <div class="slider__slide">
+            <div class="review-card">
+              <div class="review-card__header">
+                <img src="assets/images/patient-1.jpg" alt="Анна" class="review-card__avatar">
+                <div>
+                  <div class="review-card__name">Анна Н.</div>
+                  <div class="review-card__case">Терапия, июнь 2026</div>
+                </div>
+                <div class="review-card__rating">5.0</div>
+              </div>
+              <div class="review-card__stars">★★★★★</div>
+              <p class="review-card__text">Очень довольна лечением! Врачи — профессионалы. Лечила кариес, всё прошло безболезненно и быстро. Отдельное спасибо администраторам за чуткое отношение и комфортную атмосферу.</p>
+            </div>
+          </div>
+          <div class="slider__slide">
+            <div class="review-card">
+              <div class="review-card__header">
+                <img src="assets/images/patient-2.jpg" alt="Михаил" class="review-card__avatar">
+                <div>
+                  <div class="review-card__name">Михаил К.</div>
+                  <div class="review-card__case">Имплантация, май 2026</div>
+                </div>
+                <div class="review-card__rating">5.0</div>
+              </div>
+              <div class="review-card__stars">★★★★★</div>
+              <p class="review-card__text">Ставил имплант Nobel Biocare. Операция прошла быстро, восстановление комфортное. Прошло полгода — имплант прижился отлично. Рекомендую как лучшую клинику в Москве!</p>
+            </div>
+          </div>
+          <div class="slider__slide">
+            <div class="review-card">
+              <div class="review-card__header">
+                <img src="assets/images/patient-3.jpg" alt="Светлана" class="review-card__avatar">
+                <div>
+                  <div class="review-card__name">Светлана В.</div>
+                  <div class="review-card__case">Ортодонтия, апрель 2026</div>
+                </div>
+                <div class="review-card__rating">5.0</div>
+              </div>
+              <div class="review-card__stars">★★★★★</div>
+              <p class="review-card__text">Ношу брекеты 8 месяцев. Результат впечатляет! Елена Михайловна очень внимательный доктор, всегда объясняет каждый этап. Качество на высоте, цены адекватные.</p>
+            </div>
+          </div>
+          <div class="slider__slide">
+            <div class="review-card">
+              <div class="review-card__header">
+                <img src="assets/images/patient-4.jpg" alt="Ольга" class="review-card__avatar">
+                <div>
+                  <div class="review-card__name">Ольга П.</div>
+                  <div class="review-card__case">Гигиена, март 2026</div>
+                </div>
+                <div class="review-card__rating">5.0</div>
+              </div>
+              <div class="review-card__stars">★★★★★</div>
+              <p class="review-card__text">Делала профгигиену и отбеливание Zoom. Зубы стали белее на 8 тонов! Процедура комфортная, врач очень аккуратная. Обязательно вернусь через полгода на профилактику.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slider__controls">
+          <button class="slider__btn slider__btn--prev" id="sliderPrev" aria-label="Предыдущий"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <div class="slider__dots" id="sliderDots"></div>
+          <button class="slider__btn slider__btn--next" id="sliderNext" aria-label="Следующий"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="faq section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">FAQ</span>
+        <h2 class="section__title">Часто задаваемые вопросы</h2>
+        <p class="section__subtitle">Ответы на самые популярные вопросы наших пациентов</p>
+      </div>
+      <div class="faq__list">
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Больно ли лечить зубы в вашей клинике?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>Мы используем современные анестетики последнего поколения. Лечение проходит абсолютно безболезненно. Для пациентов с дентофобией предлагаем седацию (медикаментозный сон).</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Как долго служат импланты?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>При правильной гигиене и регулярных осмотрах импланты служат 20–30 лет и более. Мы даём гарантию 10 лет на все импланты Nobel Biocare и Straumann.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Можно ли исправить прикус во взрослом возрасте?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>Да, современные брекет-системы и элайнеры эффективны в любом возрасте. Средний курс лечения у взрослых — 12–18 месяцев. Результат сохраняется на всю жизнь.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Какие импланты вы используете?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>Мы работаем только с премиальными брендами: Nobel Biocare (Швейцария), Straumann (Швейцария), OSSTEM (Южная Корея) и DENTIUM. Все импланты имеют сертификаты качества.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Есть ли рассрочка на лечение?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>Да, мы предлагаем беспроцентную рассрочку на все виды лечения. Срок — от 3 до 12 месяцев. Первоначальный взнос от 0%. Подробности уточняйте у администратора.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FORM ========== -->
+  <section class="form-section section" id="form">
+    <div class="container">
+      <div class="form-section__inner">
+        <div class="form-section__info">
+          <span class="section__label">Запись на приём</span>
+          <h2 class="section__title section__title--left">Заполните форму</h2>
+          <p class="form-section__text">Мы свяжемся с вами в ближайшее время и подберём удобное время для визита. Первичный осмотр и консультация — бесплатно.</p>
+          <ul class="form-section__benefits">
+            <li>Бесплатный первичный осмотр</li>
+            <li>Составление плана лечения</li>
+            <li>Прозрачный расчёт стоимости</li>
+            <li>Гарантия на все виды работ</li>
+          </ul>
+          <div class="form-section__contact-row">
+            <div class="form-section__contact">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+            </div>
+            <div class="form-section__contact">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@dentalcare.ru">info@dentalcare.ru</a>
+            </div>
+          </div>
+        </div>
+        <form class="form" id="appointForm" novalidate>
+          <div class="form__group">
+            <label for="formName" class="form__label">Ваше имя</label>
+            <input type="text" class="form__input" id="formName" name="name" placeholder="Иван Петров" required minlength="2">
+            <span class="form__error" id="nameError"></span>
+          </div>
+          <div class="form__group">
+            <label for="formPhone" class="form__label">Телефон</label>
+            <input type="tel" class="form__input" id="formPhone" name="phone" placeholder="+7 (999) 123-45-67" required>
+            <span class="form__error" id="phoneError"></span>
+          </div>
+          <div class="form__group">
+            <label for="formService" class="form__label">Услуга</label>
+            <select class="form__input form__select" id="formService" name="service" required>
+              <option value="" disabled selected>Выберите услугу</option>
+              <option value="therapy">Терапевтическая стоматология</option>
+              <option value="surgery">Хирургия</option>
+              <option value="orthopedics">Ортопедия / Протезирование</option>
+              <option value="implantation">Имплантация</option>
+              <option value="orthodontics">Ортодонтия / Брекеты</option>
+              <option value="hygiene">Гигиена / Отбеливание</option>
+              <option value="consultation">Консультация</option>
+            </select>
+            <span class="form__error" id="serviceError"></span>
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="formDate" class="form__label">Удобная дата</label>
+              <input type="date" class="form__input" id="formDate" name="date">
+            </div>
+            <div class="form__group">
+              <label for="formTime" class="form__label">Удобное время</label>
+              <input type="time" class="form__input" id="formTime" name="time">
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="formComment" class="form__label">Комментарий</label>
+            <textarea class="form__input form__textarea" id="formComment" name="comment" placeholder="Кратко опишите проблему..." rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary form__submit">Записаться на приём</button>
+          <p class="form__policy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAP + CONTACTS ========== -->
+  <section class="map-section section" id="contacts">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Контакты</span>
+        <h2 class="section__title">Как нас найти</h2>
+        <p class="section__subtitle">Удобное расположение в центре Москвы, 5 минут от метро</p>
+      </div>
+    </div>
+    <div class="map-section__map" id="map"></div>
+    <div class="container">
+      <div class="contacts__grid">
+        <div class="contact-card">
+          <div class="contact-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h3 class="contact-card__title">Адрес</h3>
+          <p class="contact-card__text">Москва, ул. Новый Арбат, д. 15<br><small>5 мин от м. Арбатская</small></p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <h3 class="contact-card__title">Режим работы</h3>
+          <p class="contact-card__text">Пн–Пт: 9:00–21:00<br>Сб–Вс: 10:00–18:00</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <h3 class="contact-card__title">Телефон</h3>
+          <a href="tel:+74951234567" class="contact-card__link">+7 (495) 123-45-67</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <h3 class="contact-card__title">Email</h3>
+          <a href="mailto:info@dentalcare.ru" class="contact-card__link">info@dentalcare.ru</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C7.03 2 3 6.03 3 11c0 3.5 2.08 6.5 5.04 7.95.23.1.39.23.5.43.11.2.14.44.1.68-.09.55-.18 1.1-.18 1.67 0 .97.78 1.75 1.75 1.75h4.5c.97 0 1.75-.78 1.75-1.75 0-.57-.09-1.12-.18-1.67-.04-.24-.01-.48.1-.68.11-.2.27-.33.5-.43C18.92 17.5 21 14.5 21 11c0-4.97-4.03-9-9-9z"/></svg>DentalCare</a>
+          <p class="footer__copy">&copy; 2026 DentalCare. Все права защищены.</p>
+        </div>
+        <nav class="footer__nav">
+          <a href="#services">Услуги</a>
+          <a href="#doctors">Врачи</a>
+          <a href="#prices">Цены</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <div class="footer__socials">
+          <a href="#" aria-label="VK">VK</a>
+          <a href="#" aria-label="Telegram">TG</a>
+          <a href="#" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>Информация на сайте не является публичной офертой. Имеются противопоказания. Необходима консультация специалиста.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== MODAL ========== -->
+  <div class="modal" id="successModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <div class="modal__icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <h3 class="modal__title">Спасибо за заявку!</h3>
+      <p class="modal__text">Мы свяжемся с вами в ближайшее время для подтверждения записи.</p>
+      <button class="btn btn--primary" id="modalClose">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="config.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
